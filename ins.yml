@@ -1,0 +1,9 @@
+- hosts: webservers
+  become: yes
+
+  tasks:
+    - name: install git sofware
+      yum:
+       name: git
+       state: installed
+

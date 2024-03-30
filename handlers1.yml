@@ -1,0 +1,14 @@
+--- # first  stop httpd service and remove httpd software from webservers
+
+
+- hosts: webservers
+  user: ansible
+  become: true
+  connection: ssh
+
+
+  tasks:
+
+    - name:  install  httpd software
+      action: yum name=httpd state=installed
+
