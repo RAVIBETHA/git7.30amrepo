@@ -1,0 +1,15 @@
+--- # install many softwares
+
+- hosts: webservers
+  connection: ssh
+  user: ansible
+  become: yes
+
+
+  tasks:
+
+    - name: removing  pacakages
+      yum:
+
+        name: ['httpd','git','docker','java','tree']
+        state: absent

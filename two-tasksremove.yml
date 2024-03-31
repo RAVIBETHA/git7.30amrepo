@@ -1,0 +1,13 @@
+--- # first stop httpd service ans remove httpd software in another  way
+
+- hosts: all
+  user: ansible
+  connection: ssh
+  become: true
+
+  tasks:
+
+      - name: remove  httpd software
+        yum:
+          name: httpd
+          state: absent

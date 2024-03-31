@@ -1,0 +1,12 @@
+--- # install s/w
+- hosts: webservers
+  connection: ssh
+  become: yes
+  user: ansible
+
+  tasks:
+    - name: install docker software
+      yum:
+       name: docker
+       state: installed
+

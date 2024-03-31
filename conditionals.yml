@@ -1,0 +1,19 @@
+--- # 
+
+- hosts: webservers
+  connection: ssh
+  become: yes
+  user: ansible
+
+  tasks:
+
+    - name: install httpd software for RedHat
+      command: yum install httpd -y
+      when: ansible_os_family == "RedHat"
+
+
+    - name: install apache software for Debian
+      command: apt-get install apache -y
+      when: ansible_os_family == "Debian"
+
+

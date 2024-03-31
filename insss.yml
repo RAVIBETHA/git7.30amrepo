@@ -1,0 +1,18 @@
+--- # 
+- hosts: webservers
+  connection: ssh
+  become: yes
+  user: ansible
+
+
+
+  vars:
+    pkgname: httpd
+
+
+
+    tasks:
+      - name: install httpd software
+        action: name='{pkgnmae}' state=present
+
+

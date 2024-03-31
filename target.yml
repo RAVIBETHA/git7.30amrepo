@@ -1,0 +1,9 @@
+--- #this is my task section
+- hosts: all
+  user: ansible
+  connection: ssh
+  become: yes
+
+  tasks:
+    - name: installing httpd on webservers
+      action: yum pkg=httpd state=present

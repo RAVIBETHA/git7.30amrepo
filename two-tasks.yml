@@ -1,0 +1,19 @@
+--- # install httpd software ans start service
+- hosts: all
+  user: ansible
+  connection: ssh
+  become: true
+
+
+  tasks:
+    - name: install pkg
+      yum: 
+        name: httpd
+        state: present
+
+
+    - name: start service
+      service:
+        name: httpd
+        state: started
+            

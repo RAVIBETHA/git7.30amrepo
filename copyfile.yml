@@ -1,0 +1,11 @@
+--- # cretaing a file
+- hosts: webservers
+  user: ansible
+  connection: ssh
+  become: yes
+
+  tasks:
+    - name: creating a file
+      file:
+        path: /home/ansible/hari123
+        state: touch 

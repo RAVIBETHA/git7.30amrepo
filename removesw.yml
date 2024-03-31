@@ -1,0 +1,14 @@
+--- # first  stop httpd service and remove httpd software from webservers
+
+
+- hosts: webservers
+  user: ansible
+  become: true
+  connection: ssh
+
+
+  tasks:
+
+    - name: stop httpd service 
+      action: service  name=httpd state=stopped
+      notify: stop remove httpd software
